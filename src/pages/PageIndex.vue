@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div>テスト</div>
-    <router-link to="fas">ボタン</router-link>
+    <div>ここはトップページです。</div>
   </div>
 </template>
 
