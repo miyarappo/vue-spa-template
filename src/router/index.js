@@ -1,35 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PageIndex from '@/pages/PageIndex'
-import Page404 from '@/pages/Page404'
-import PageUsers from '@/pages/PageUsers'
-import PageUserDetail from '@/pages/PageUserDetail'
-import PageUserCreate from '@/pages/PageUserCreate'
 
-// プラグインとして登録
 Vue.use(Router)
 
 const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      component: PageIndex
+      component: () => import('@/pages/PageTop')
     },
     { 
-      path: '/users',
-      component: PageUsers
+      path: '/create',
+      component: () => import('@/pages/PageCreate')
     },
     {
-      path: '/users/new',
-      component: PageUserCreate
-    },
-    {
-      path: '/users/:userId',
-      component: PageUserDetail
+      path: '/update/:id',
+      component: () => import('@/pages/PageUpdate')
     },
     {
       path: '*',
-      component: Page404
+      component: () => import('@/pages/Page404')
     }
   ]
 })
