@@ -9,18 +9,6 @@ const router = new Router({
     {
       path: '/',
       component: () => import('@/pages/PageTop')
-    },
-    { 
-      path: '/create',
-      component: () => import('@/pages/PageCreate')
-    },
-    {
-      path: '/update/:id',
-      component: () => import('@/pages/PageUpdate')
-    },
-    {
-      path: '*',
-      component: () => import('@/pages/Page404')
     }
   ]
 })
